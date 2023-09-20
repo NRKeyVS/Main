@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="nrkey.css">
+<title>NRKey.site</title>
+<style>
+</style>
+    <script defer src="nrkey.js"></script>
+</head>
+<body>
+    <img src="2.png" id ="logo">
+    <ul>
+        <li onclick="scrollToBottom()">Links</li>
+        <li onclick="scrollToQ()">Q&A</li>
+        <li onclick="scrollToShow()">Showcase</li>
+        <li onclick="scrollToAbout()">About</li>
+        <li onclick="scrollToTop()">Home</li>
+    </ul>
+
+    <video width="100%" autoplay muted loop>
+        <source src="Starter.mp4" type="video/mp4">
+      </video>
+
+    <div id="about">
+        <h2 class="hidden">About</h2>
+        <hr>
+        <p class="hidden">Hi I'm NRKey and I operate a YouTube channel that mainly makes english covers of anime songs using vocal synths. I started gaining an interest in Vocaloid around 2019 and since then I moved on to the vocal synthesis software SynthesizerV for most of my productions.
+            I cover a variety of genres on this channel and I hope to graduaully improve it as time goes on.</p>
+        <p class="hidden">Join me as I combine AI and programming to create music!</p>
+        <br>
+        <br>
+        <br>
+        <img src="me2.png" id="me" class="hidden">
+    </div>
+
+    <div id="showcase">
+        <h2 class="hidden">Showcase</h2>
+        <hr>
+        <p class="hidden">Here is a showcase of some of the covers I've done!</p>
+        <br>
+        <br>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/OEzhz8-3Hfc?si=rJtwXySUurdAxbVG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/i4Zc2sh7K8s?si=uZiX0EO3psbu7D4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/tD_3qTly4JQ?si=AQYi9m4KTLQGAiRx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/TjCg-gyL5JE?si=nrRxHdFPjQsHbfqn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/ypiChakMCCo?si=g0JFatRF59niS88J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/yYBxUfDTSJU?si=F3K3KDaGoyeMwbaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/B-rUCykZAi8?si=2uv64PHmVaQHTdSz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/w2ZfzjOisDM?si=KjsFvk-pbQHYklk3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/k34sYmJrNsQ?si=WUv6o1ZklEmAduVC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    </div>
+
+    <div id="QA">
+        <h2 class="hidden">Q&A</h2>
+        <hr>
+        <p class="hidden">Some answers to questions about me and my channel!</p>
+        <br>
+        <button class="hidden" data-answer="NRKey derives from the word 'Anarchy' which means I do whatever I want with my channel :P." onclick="toggleQuestionAnswer(this)">Where did you get the name NRKey?</button>
+        <button class="hidden" data-answer="No. I do plan on releasing original songs though and those will be on streaming platforms." onclick="toggleQuestionAnswer(this)">Will the covers be on streaming platforms?</button>
+        <button class="hidden" data-answer="Not really. In exchange for not doing full covers I'll release more songs from a variety of animes/genres." onclick="toggleQuestionAnswer(this)">Any plans on making full versions of covers?</button>
+        <button class="hidden" data-answer="My DAW of choice is Studio One. I use it to mix the vocals from SynthV and make the songs." onclick="toggleQuestionAnswer(this)">What DAW do you use to mix your music?</button>
+        <button class="hidden" data-answer="I don't actually save any SVP files. I use SynthV as a VST in Studio One to create the vocals." onclick="toggleQuestionAnswer(this)">Can I get the SVP file for your covers?</button>
+        <button class="hidden" data-answer="No I do not. This channel is merely a passion project. ;P" onclick="toggleQuestionAnswer(this)">Do you offer commissioned work?</button>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.youtube.com/@NRKey"><img src="youtube.png" id="yt" class="hidden"></a>
+            <a href="https://twitter.com/NRKey_"><img src="twitter.png" id="x" class="hidden"></a>
+            <a href="https://www.instagram.com/_nrkey_/"><img src="instagram.png" id="insta" class="hidden"></a>
+            <a href="https://www.patreon.com/NRKeyVS"><img src="patreon.png" id="pat" class="hidden"></a>
+        </div>
+        <p>Copyright © 2023 NRKey</p>
+    </footer>
+</body>
+</html>
