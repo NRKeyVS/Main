@@ -8,12 +8,14 @@
     <script defer src="nrkey.js"></script>
 </head>
 <body>
-    <img src="2.png" id ="logo">
     <ul>
+        <img src="2.png" id ="logo">
+        <img src="NRKey.png" id="NRKey">
+        <br>
         <li onclick="scrollToBottom()">Links</li>
         <li onclick="scrollToQ()">Q&A</li>
         <li onclick="scrollToShow()">Showcase</li>
-        <li onclick="scrollToAbout()">About</li>
+        <li onclick="scrollToAbout()">Info</li>
         <li onclick="scrollToTop()">Home</li>
     </ul>
 
@@ -22,7 +24,7 @@
       </video>
 
     <div id="about">
-        <h2 class="hidden">About</h2>
+        <h2 class="hidden">Info</h2>
         <hr>
         <p class="hidden">Hi I'm NRKey and I operate a YouTube channel that mainly makes english covers of anime songs using vocal synths. I started gaining an interest in Vocaloid around 2019 and since then I moved on to the vocal synthesis software SynthesizerV for most of my productions.
             I cover a variety of genres on this channel and I hope to graduaully improve it as time goes on.</p>
@@ -30,7 +32,20 @@
         <br>
         <br>
         <br>
-        <img src="me2.png" id="me" class="hidden">
+        <a href="https://www.youtube.com/@NRKey" target="_blank"><img src="me2.png" id="me" class="hidden"></a>
+    </div>
+
+    <div id="synthv">
+        <h2 class="hidden">What is SynthV?</h2>
+        <hr>
+        <p class ="hidden">SynthesizerV is a vocal synthesis software developed by the company Dreamtonics. It contains a variety of vocals to choose from and it currently supports the languages English, Japanese, Chinese/Cantonese.
+        </p>
+        <p class="hidden">One of the popular features of SynthV is it's AI engine making the vocals capable of singing in a life-like manner which I use in my music.</p>
+        <p class="hidden">The program contains both male and female vocals with a variety of ranges and singing styles.</p>
+        <br>
+        <br>
+        <br>
+        <a href="https://dreamtonics.com/" target="_blank"><img src="SV.png" id="SV" class="hidden"></a>
     </div>
 
     <div id="showcase">
@@ -61,7 +76,7 @@
         <button class="hidden" data-answer="Not really. In exchange for not doing full covers I'll release more songs from a variety of animes/genres." onclick="toggleQuestionAnswer(this)">Any plans on making full versions of covers?</button>
         <button class="hidden" data-answer="My DAW of choice is Studio One. I use it to mix the vocals from SynthV and make the songs." onclick="toggleQuestionAnswer(this)">What DAW do you use to mix your music?</button>
         <button class="hidden" data-answer="I don't actually save any SVP files. I use SynthV as a VST in Studio One to create the vocals." onclick="toggleQuestionAnswer(this)">Can I get the SVP file for your covers?</button>
-        <button class="hidden" data-answer="No I do not. This channel is merely a passion project. ;P" onclick="toggleQuestionAnswer(this)">Do you offer commissioned work?</button>
+        <button class="hidden" data-answer="No I do not at the moment. This channel is currently merely a passion project. ;P" onclick="toggleQuestionAnswer(this)">Do you offer commissioned work?</button>
     </div>
 
     <footer>

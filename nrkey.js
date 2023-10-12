@@ -1,3 +1,36 @@
+window.addEventListener('scroll', function() {
+  var ul = document.querySelector('ul');
+  if (window.scrollY > 0) {
+    ul.classList.add('shrunk');
+  } else {
+    ul.classList.remove('shrunk');
+  }
+});
+window.addEventListener('scroll', function() {
+  var li = document.querySelector('li');
+  if (window.scrollY > 0) {
+    li.classList.add('shrunk');
+  } else {
+    li.classList.remove('shrunk');
+  }
+});
+window.addEventListener('scroll', function() {
+  var logo = document.querySelector('#logo');
+  if (window.scrollY > 0) {
+    logo.classList.add('shrunk');
+  } else {
+    logo.classList.remove('shrunk');
+  }
+});
+window.addEventListener('scroll', function() {
+  var nrk = document.querySelector('#NRKey');
+  if (window.scrollY > 0) {
+    nrk.classList.add('shrunk');
+  } else {
+    nrk.classList.remove('shrunk');
+  }
+});
+
 function scrollToTop() {
     window.scrollTo(0, 0);
 }
