@@ -121,14 +121,17 @@ iframe:nth-child(9) {
 
 /*text and buttons*/
 h1 {
+    width: 300px;
     color: white;
     text-shadow: h-shadow v-shadow blur-radius color;
     font-family: 'Edo', sans-serif;
     font-size: 100px;
     text-shadow: 2px 2px 5px black;
-    padding: 5px;                   
+    padding: 5px;    
+    margin: 0 auto;               
 }
 h2 {
+    width: 300px;
     color: white;
     text-shadow: h-shadow v-shadow blur-radius color;
     font-family: 'Edo', sans-serif;
@@ -137,9 +140,10 @@ h2 {
     padding: 5px;
     text-align: center;
     width: 1000px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 p {
+    width: 300px;
     color: white;
     text-shadow: h-shadow v-shadow blur-radius color;
     font-family: 'League Spartan', sans-serif;
@@ -350,4 +354,43 @@ footer {
 }
 #pat:hover {
   transform: scale(.95);
+}
+
+@media (max-width: 600px) {
+  /* Styles to be applied to screens with a maximum width of 600px */
+  h1, h2, p {
+    width: 100%;
+    margin: 0 auto;
+    word-break: break-word;
+  }
+  #logo {
+    opacity: 0;
+  }
+  #NRKey {
+    opacity: 0;
+  }
+  #about {
+    width: 100%;
+  }
+  body {
+    text-align: center;
+  }
+  #SV {
+    width: 100%;
+  }
+  #synthv {
+    width: 100%;
+  }
+  #showcase {
+    width: 100%;
+  }
+  #QA {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
+  }
 }
