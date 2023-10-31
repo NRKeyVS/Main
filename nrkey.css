@@ -363,8 +363,11 @@ footer {
     margin: 0 auto;
     word-break: break-word;
   }
-  #logo {
+  li {
     opacity: 0;
+  }
+  #logo {
+    left: 200px;
   }
   #NRKey {
     opacity: 0;
