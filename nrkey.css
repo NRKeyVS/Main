@@ -203,7 +203,7 @@ body {
 
 #logo {
   position: fixed;
-  left: 725px;
+  left: 900px;
     width: 100px;
     height: 100px;
     z-index: 999;
@@ -219,7 +219,7 @@ body {
   z-index: 999;
   width: 250px;
   height: 200px;
-  bottom: 560px;
+  bottom: 775px;
   left: 50px;
   transition: all .2s ease-in-out;
   animation: nav-load 500ms ease-in-out;
