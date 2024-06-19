@@ -30,24 +30,107 @@ window.addEventListener('scroll', function() {
     nrk.classList.remove('shrunk');
   }
 });
-
+window.addEventListener('scroll', function() {
+  var nrk = document.querySelector('#bar');
+  if (window.scrollY > 0) {
+    nrk.classList.add('shrunk');
+  } else {
+    nrk.classList.remove('shrunk');
+  }
+});
 function scrollToTop() {
     window.scrollTo(0, 0);
+    const navigation = document.querySelector('.navigation');
+    navigation.classList.toggle('show');
 }
 
 function scrollToAbout() {
     var div = document.getElementById("about");
-    div.scrollIntoView();
+    var offset = div.offsetTop; // Get the offset from the top
+
+    // Adjust the offset by the desired number of pixels to scroll upward
+    // Experiment with different values (e.g., 50) to find the ideal position
+    var scrollPosition = offset - 100;
+  
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth"
+    });
+    const navigation = document.querySelector('.navigation');
+    if (navigation.classList.contains('show')) {
+      navigation.classList.remove('show');
+    }
+  }
+  function scrollToSV() {
+    var div = document.getElementById("synthv");
+    var offset = div.offsetTop; // Get the offset from the top
+
+    // Adjust the offset by the desired number of pixels to scroll upward
+    // Experiment with different values (e.g., 50) to find the ideal position
+    var scrollPosition = offset - 100;
+  
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth"
+    });
+    const navigation = document.querySelector('.navigation');
+    if (navigation.classList.contains('show')) {
+      navigation.classList.remove('show');
+    }
   }
 
 function scrollToShow() {
     var div = document.getElementById("showcase");
-    div.scrollIntoView();
+    var offset = div.offsetTop; // Get the offset from the top
+
+    // Adjust the offset by the desired number of pixels to scroll upward
+    // Experiment with different values (e.g., 50) to find the ideal position
+    var scrollPosition = offset - 100;
+  
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth"
+    });
+    const navigation = document.querySelector('.navigation');
+    if (navigation.classList.contains('show')) {
+      navigation.classList.remove('show');
+    }
   }
 
 function scrollToQ() {
     var div = document.getElementById("QA");
-    div.scrollIntoView();
+    var offset = div.offsetTop; // Get the offset from the top
+
+    // Adjust the offset by the desired number of pixels to scroll upward
+    // Experiment with different values (e.g., 50) to find the ideal position
+    var scrollPosition = offset - 100;
+  
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth"
+    });
+    const navigation = document.querySelector('.navigation');
+    if (navigation.classList.contains('show')) {
+      navigation.classList.remove('show');
+    }
+  }
+
+function scrollToSocial() {
+    var div = document.getElementById("socials");
+    var offset = div.offsetTop; // Get the offset from the top
+
+    // Adjust the offset by the desired number of pixels to scroll upward
+    // Experiment with different values (e.g., 50) to find the ideal position
+    var scrollPosition = offset - 100;
+  
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth"
+    });
+    const navigation = document.querySelector('.navigation');
+    if (navigation.classList.contains('show')) {
+      navigation.classList.remove('show');
+    }
   }
 
 function scrollToBottom() {

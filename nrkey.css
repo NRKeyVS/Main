@@ -161,6 +161,7 @@ ul {
     top: 0px;
     z-index: 998;
     border: none;
+    list-style: none;
     list-style-type: none;
     justify-content: center;
     align-items: center;
@@ -169,12 +170,12 @@ ul {
     width: 100%;
     height: 75px;
     overflow: hidden;
-    background-color: black;
+    background-color: transparent;
     text-align: center;
     transition: height 0.5s ease-in-out;
   }
   ul.shrunk {
-    height: 60px;
+    background-color: black;
   }
   
 li {
@@ -182,16 +183,48 @@ li {
     color: white;
     text-shadow: h-shadow v-shadow blur-radius color;
     font-family: 'League Spartan', sans-serif;
-    font-size: 25px;
+    font-size: 50px;
     text-shadow: 2px 2px 5px black;
-    float: right;
-    padding: 10px;
+    float: left;
+    padding: 20px;
     animation: nav-up 500ms ease-in-out;
     transition: all 0.5s ease-in-out;
   }
   li.shrunk {
-    font-size: 20px;
+    font-size: 40px;
   }
+
+  a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent element (prevents purple on click) */
+  }
+
+.navigation {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  background-color: #272727;
+} 
+.navigation.show {
+  display: block;
+}
+.navigation li {
+  float: none;
+  font-size: 30px;
+  border: none;
+  border-radius: 50px;
+  padding: 25px;
+  height: 30px;
+}
+.navigation li:hover {
+  cursor: pointer;
+  background-color: #5d5b5b;
+}
 
 /*body componets*/
 body {
@@ -202,17 +235,33 @@ body {
   }
 
 #logo {
-  position: fixed;
-  left: 900px;
-    width: 100px;
-    height: 100px;
+  float: left;
+  margin-left: 30px;  /* Adjust this value for desired spacing */
+    width: 90px;
+    height: 90px;
     z-index: 999;
     transition: all .2s ease-in-out;
   animation: nav-load 500ms ease-in-out;
 }
 #logo.shrunk {
-  height: 90px;
-  width: 90px;
+  height: 75px;
+  width: 75px;
+}
+
+#bar {
+  float: left;
+  margin-left: 20px;
+  width: 75px;
+  height: 75px;
+  transition: all .2s ease-in-out;
+  animation: nav-load 500ms ease-in-out;
+}
+#bar.shrunk {
+  height: 65px;
+  width: 65px;
+}
+#bar:hover {
+  cursor: pointer;
 }
 #NRKey {
   position: fixed;
@@ -235,6 +284,65 @@ body {
   transform: scale(1.05);
 }
 
+/*select*/
+#select {
+  position: relative; /* Enables positioning for video */
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Clip overflowing video content */
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scales video to fill container */
+}
+#select > div { /* Targets all child divs of #select */
+  color: white;
+  font-size: 25px;
+}
+#select > div {
+  /* Other styles for box divs */
+  transition: transform 0.2s ease-in-out; /* Smooth transition effect */
+}
+
+#select > div:hover {
+  transform: translateY(-5px); /* Moves the box up 5px on hover */
+}
+
+#box {
+  bottom: 200px;
+  width: 200px;
+  background-color: #272727;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+#box:hover {
+  cursor: pointer;
+  background-color: #5d5b5b;
+}
+#boxart {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+
 /*about*/
 #about {
   height: 750px;
@@ -253,7 +361,7 @@ body {
 }
 
 #synthv {
-  height: 500px;
+  height: 750px;
 }
 
 #SV {
@@ -279,6 +387,26 @@ iframe {
   min-height: 750px;
 }
 
+#socials {
+  min-height: 750px;
+  justify-content: center;
+}
+
+#scrollButton {
+  position: fixed;  /* Make it stay in place while scrolling */
+  bottom: 20px;  /* Adjust distance from bottom */
+  right: 20px;  /* Adjust distance from right */
+  width: 50px;  /* Adjust button width */
+  height: 50px;  /* Adjust button height */
+  border-radius: 50%;  /* Make it circular */
+  background-color: rgb(37, 37, 37);  /* Adjust background color */
+  color: white;  /* Adjust text color */
+  font-size: 18px;  /* Adjust font size */
+  cursor: pointer;  /* Make it look clickable */
+  z-index: 99;  /* Ensure button stays above other elements */
+  border: none;
+}
+
 button {
   background-color: black;
   border: 1px solid white;
@@ -301,6 +429,36 @@ button:hover {
   transition: all .5s ease-in-out;
   transform: scale(0.95);
 }
+#followb {
+  background-color:#272727;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 25px;
+  height: 50px;
+  width: 400px;
+  display: flex; /* Makes button and text behave like a single line */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#followb:hover {
+  cursor: pointer;
+  background-color: #5d5b5b;
+  
+}
+
+#sbox {
+  width: 400px;
+  background-color: #272727;
+  border-radius: 10px;
+  padding: 20px;
+  height: 500px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
 
 
 /* footer and social media links*/
@@ -316,8 +474,8 @@ footer {
 }
 
 #yt {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   padding: 10px;
   transition: all .2s ease-in-out;
 }
@@ -327,18 +485,27 @@ footer {
 }
 
 #x {
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 50px;
   padding: 10px;
   transition: all .2s ease-in-out;
 }
 #x:hover {
   transform: scale(.95);
 }
+#pp {
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+}
+#pp:hover {
+  transform: scale(.95);
+}
 
 #insta {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   padding: 10px;
   transition: all .2s ease-in-out;
 }
@@ -355,22 +522,46 @@ footer {
 #pat:hover {
   transform: scale(.95);
 }
+#sm {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+  border-radius: 50%; /* For a circle */
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+}
+#sm:hover {
+  transform: scale(.95);
+}
 
 @media (max-width: 600px) {
   /* Styles to be applied to screens with a maximum width of 600px */
   h1, h2, p {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     word-break: break-word;
   }
   li {
     opacity: 0;
   }
+  .navigation li {
+    opacity: 1;
+  }
   #logo {
-    left: 200px;
+    opacity: 0;
   }
   #NRKey {
     opacity: 0;
+  }
+  #select {
+    width: 100%;
+  }
+  #box {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
   }
   #about {
     width: 100%;
@@ -388,6 +579,9 @@ footer {
     width: 100%;
   }
   #QA {
+    width: 100%;
+  }
+  #socials {
     width: 100%;
   }
   button {

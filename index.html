@@ -16,22 +16,59 @@
 </head>
 <body>
     <ul>
+        <img src="3 bar.png" id="bar" class="menu-trigger">
         <img src="2.png" id ="logo">
-        <img src="NRKey.png" id="NRKey">
-        <br>
-        <li onclick="scrollToBottom()">Links</li>
-        <li onclick="scrollToQ()">Q&A</li>
-        <li onclick="scrollToShow()">Showcase</li>
-        <li onclick="scrollToAbout()">Info</li>
-        <li onclick="scrollToTop()">Home</li>
+        <li >NRKey</li>
     </ul>
 
-    <video width="100%" autoplay muted loop>
-        <source src="Starter.mp4" type="video/mp4">
-      </video>
+    <ul class="navigation" id="nav">  
+        <li onclick="scrollToTop()">Home</li>
+        <li onclick="scrollToAbout()">About Me</li>
+        <li onclick="scrollToSV()">SynthesizerV</li>
+        <li onclick="scrollToShow()">Showcase</li>
+        <li onclick="scrollToQ()">Questions & Answers</li>
+        <li onclick="scrollToSocial()">Follow Me!</li>
+    </ul>
+    <script>
+        const menuTrigger = document.querySelector('.menu-trigger');
+        const navigation = document.querySelector('.navigation');
+
+        menuTrigger.addEventListener('click', () => {
+        navigation.classList.toggle('show'); // Toggle 'show' class for visibility
+        });
+    </script>
+
+    <button id="scrollButton">↑</button>
+    <script>
+        const scrollButton = document.getElementById("scrollButton");
+        
+        window.onscroll = function() {
+          // Show button when user scrolls down a certain amount
+          if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            scrollButton.style.display = "block";
+          } else {
+            scrollButton.style.display = "none";
+          }
+        };
+        
+        scrollButton.addEventListener("click", function() {
+          // Scroll to top smoothly when button is clicked
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        </script>
+    <div id="select">
+        <span class="video-container">
+            <video autoplay loop muted src="loading video.mp4"></video>
+        </span>
+        <div id="box" class="hidden" onclick="scrollToAbout()">Me<img src="me.png" id="boxart"></div>
+        <div id="box" class="hidden" onclick="scrollToSV()">SynthV<img src="voc.png" id="boxart"></div>
+        <div id="box" class="hidden" onclick="scrollToShow()">Works<img src="works.png" id="boxart"></div>
+        <div id="box" class="hidden" onclick="scrollToQ()">Q&A<img src="qa.png" id="boxart"></div>
+        <div id="box" class="hidden" onclick="scrollToSocial()">Socials<img src="sm.png" id="boxart"></div>
+    </div>
 
     <div id="about">
-        <h2 class="hidden">Info</h2>
+        <h2 class="hidden">About Me</h2>
         <hr>
         <p class="hidden">Hi I'm NRKey and I operate a YouTube channel that mainly makes english covers of anime songs using vocal synths. I started gaining an interest in Vocaloid around 2019 and since then I moved on to the vocal synthesis software SynthesizerV for most of my productions.
             I cover a variety of genres on this channel and I hope to graduaully improve it as time goes on.</p>
@@ -45,7 +82,7 @@
     <div id="synthv">
         <h2 class="hidden">What is SynthV?</h2>
         <hr>
-        <p class ="hidden">SynthesizerV is a vocal synthesis software developed by the company Dreamtonics. It contains a variety of vocals to choose from and it currently supports the languages English, Japanese, Chinese/Cantonese.
+        <p class ="hidden">SynthesizerV is a vocal synthesis software developed by the company Dreamtonics. It contains a variety of vocals to choose from and it currently supports the languages English, Japanese, Chinese/Cantonese and Spanish.
         </p>
         <p class="hidden">One of the popular features of SynthV is it's AI engine making the vocals capable of singing in a life-like manner which I use in my music.</p>
         <p class="hidden">The program contains both male and female vocals with a variety of ranges and singing styles.</p>
@@ -61,7 +98,7 @@
         <p class="hidden">Here's a showcase of some of the covers I've done!</p>
         <br>
         <br>
-        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/OEzhz8-3Hfc?si=rJtwXySUurdAxbVG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/pXQgae8wNko?si=Z2CMTmxfWQ3-lMJt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/i4Zc2sh7K8s?si=uZiX0EO3psbu7D4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/tD_3qTly4JQ?si=AQYi9m4KTLQGAiRx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/TjCg-gyL5JE?si=nrRxHdFPjQsHbfqn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -70,6 +107,9 @@
         <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/B-rUCykZAi8?si=2uv64PHmVaQHTdSz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/w2ZfzjOisDM?si=KjsFvk-pbQHYklk3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/k34sYmJrNsQ?si=WUv6o1ZklEmAduVC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/2GomY3fFQAo?si=adErtLLum-AqD4qO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/Ig-OB1hjKbI?si=_anHUsVAIyulTPxU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="loadvid" width="416" height="234" src="https://www.youtube.com/embed/zIW-dZS_2jY?si=wjjdHXSBr1q6RUqN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
     </div>
 
@@ -84,16 +124,37 @@
         <button class="hidden" data-answer="My DAW of choice is Studio One. I use it to mix the vocals from SynthV and make the songs." onclick="toggleQuestionAnswer(this)">What DAW do you use to mix your music?</button>
         <button class="hidden" data-answer="I don't actually save any SVP files. I use SynthV as a VST in Studio One to create the vocals." onclick="toggleQuestionAnswer(this)">Can I get the SVP file for your covers?</button>
         <button class="hidden" data-answer="No I do not at the moment. This channel is currently merely a passion project. ;P" onclick="toggleQuestionAnswer(this)">Do you offer commissioned work?</button>
+        <button class="hidden" data-answer="I don't really have a solid upload schedule. I just upload when I can!" onclick="toggleQuestionAnswer(this)">Do you have an upload schedule?</button>
+        <button class="hidden" data-answer="English is the language I'm most familar with and I've always been inspired by other artists who also this." onclick="toggleQuestionAnswer(this)">Why do you cover it in english?</button>
+    </div>
+
+    <div id="socials">
+        <h2 class="hidden">Socials</h2>
+        <hr>
+        <p class="hidden">Follow and support me on these platforms!</p>
+        <div id="sbox" class="hidden">
+            <a href="https://www.youtube.com/@NRKey" target="_blank"><button id="followb"><img src="spotify.png" id="yt" class="hidden">Spotify *SOON*</button></a>
+            <a href="https://www.youtube.com/@NRKey" target="_blank"><button id="followb"><img src="youtube.png" id="yt" class="hidden">Youtube</button></a>
+            <a href="https://twitter.com/NRKey_" target="_blank"><button id="followb"><img src="twitter.png" id="x" class="hidden">X/Twitter</button></a>
+            <a href="https://www.youtube.com/@NRKey" target="_blank"><button id="followb"><img src="instagram.png" id="insta" class="hidden">Instagram</button></a>
+            <a href="https://www.youtube.com/@NRKey" target="_blank"><button id="followb"><img src="patreon.png" id="pat" class="hidden">Patreon</button></a>
+            <a href="https://www.paypal.com/donate?business=9QWV74N6MX5JS&currency_code=USD" target="_blank"><button id="followb"><img src="paypal.png" id="pp" class="hidden">PayPal</button></a>
+        </div>
     </div>
 
     <footer>
         <div class="social-media">
-            <a href="https://www.youtube.com/@NRKey"><img src="youtube.png" id="yt" class="hidden"></a>
-            <a href="https://twitter.com/NRKey_"><img src="twitter.png" id="x" class="hidden"></a>
-            <a href="https://www.instagram.com/_nrkey_/"><img src="instagram.png" id="insta" class="hidden"></a>
-            <a href="https://www.patreon.com/NRKeyVS"><img src="patreon.png" id="pat" class="hidden"></a>
+            <a href="https://www.youtube.com/@NRKey"><img src="sm1.png" id="sm" class="hidden"></a>
+            <a href="https://twitter.com/NRKey_"><img src="sm2.png" id="sm" class="hidden"></a>
+            <a href="https://www.instagram.com/_nrkey_/"><img src="sm3.png" id="sm" class="hidden"></a>
+            <a href="https://www.patreon.com/NRKeyVS"><img src="sm4.png" id="sm" class="hidden"></a>
         </div>
-        <p>Copyright © 2023 NRKey</p>
+        <p>Copyright © <span id="currentYear"></span> NRKey</p>
+        <p style="font-size: 15px;">- All Rights Reserved -</p>
     </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
