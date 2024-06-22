@@ -255,6 +255,7 @@ body {
   height: 75px;
   transition: all .2s ease-in-out;
   animation: nav-load 500ms ease-in-out;
+  border-radius: 50%;
 }
 #bar.shrunk {
   height: 65px;
@@ -262,6 +263,7 @@ body {
 }
 #bar:hover {
   cursor: pointer;
+  border-color: #5d5b5b;
 }
 #NRKey {
   position: fixed;
