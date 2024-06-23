@@ -538,7 +538,7 @@ footer {
   transform: scale(.95);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   /* Styles to be applied to screens with a maximum width of 600px */
   h1, h2, p {
     width: 90%;
